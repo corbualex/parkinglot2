@@ -1,4 +1,4 @@
-package org.parkinglot.parkinglot2;
+package servlets;
 
 import java.io.*;
 
