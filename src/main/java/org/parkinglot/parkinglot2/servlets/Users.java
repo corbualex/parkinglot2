@@ -1,4 +1,4 @@
-package servlets;
+package org.parkinglot.parkinglot2.servlets;
 
 import jakarta.inject.Inject;
 import jakarta.servlet.ServletException;
@@ -6,8 +6,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import org.parkinglot.parkinglot2.entities.common.UserDto;
-import org.parkinglot.parkinglot2.entities.ejb.UsersBean;
+import org.parkinglot.parkinglot2.common.UserDto;
+import org.parkinglot.parkinglot2.ejb.UsersBean;
 
 import java.io.IOException;
 import java.util.List;

@@ -1,10 +1,10 @@
-package org.parkinglot.parkinglot2.entities.ejb;
+package org.parkinglot.parkinglot2.ejb;
 
 import jakarta.ejb.Stateless;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.TypedQuery;
-import org.parkinglot.parkinglot2.entities.common.UserDto;
+import org.parkinglot.parkinglot2.common.UserDto;
 import org.parkinglot.parkinglot2.entities.User;
 
 import java.util.ArrayList;

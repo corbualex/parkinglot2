@@ -1,4 +1,4 @@
-package org.parkinglot.parkinglot2.entities.common;
+package org.parkinglot.parkinglot2.common;
 
 public class UserDto {
 

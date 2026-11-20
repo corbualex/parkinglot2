@@ -1,13 +1,14 @@
-package servlets;
+package org.parkinglot.parkinglot2.servlets;
 
 import jakarta.inject.Inject;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
-import org.parkinglot.parkinglot2.entities.common.CarDto;
-import org.parkinglot.parkinglot2.entities.ejb.CarsBean;
+import org.parkinglot.parkinglot2.common.CarDto;
+import org.parkinglot.parkinglot2.ejb.CarsBean;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet(name = "Cars", value = "/Cars")
@@ -22,8 +23,16 @@ public class Cars extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse
-            response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String[] carIdsAsString = request.getParameterValues("car_ids");
+        if (carIdsAsString != null) {
+            List<Long> carIds = new ArrayList<>();
+            for (String carIdAsString : carIdsAsString) {
+                carIds.add(Long.parseLong(carIdAsString));
+            }
+            carsBean.deleteCarsByIds(carIds);
+        }
+        response.sendRedirect(request.getContextPath() + "/Cars");
     }
 
     @Inject
